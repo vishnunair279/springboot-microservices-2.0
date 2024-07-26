@@ -48,7 +48,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
 
-#To provide info about this service to the actuator endpoiny.
+#To provide info about this service to the actuator endpoint.
 info:
   app:
     name: "accounts"
