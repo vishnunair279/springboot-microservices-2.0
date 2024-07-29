@@ -24,8 +24,8 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
 
-    AccountsRepository accountsRepository;
-    CustomerRepository customerRepository;
+    private AccountsRepository accountsRepository;
+    private CustomerRepository customerRepository;
 
     /**
      * @param customerDto - CustomerDto Object
