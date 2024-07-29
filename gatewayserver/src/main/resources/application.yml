@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+
+#    To leverage the individual services info present in the Discovery service so that requests can be routed accordingly.
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          # To consider the service names in the discovery service to lowercase. By default, this is false.
+          lowerCaseServiceId: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+#To enable the gateway related endpoints in the actuator
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Bank Gateway Server Application"
+    version: "1.0.0"
