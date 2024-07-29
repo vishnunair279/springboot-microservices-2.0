@@ -3,7 +3,6 @@ package com.vishnu.accounts.controller;
 import com.vishnu.accounts.dto.CustomerDetailsDto;
 import com.vishnu.accounts.dto.ErrorResponseDto;
 import com.vishnu.accounts.service.ICustomersService;
-import com.vishnu.accounts.service.impl.CustomerServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,7 +11,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.apache.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Tag(
-        name = "REST API for Customers in EazyBank",
-        description = "REST APIs in EazyBank to FETCH customer details"
+        name = "REST API for Customers in Bank",
+        description = "REST APIs in Bank to FETCH customer details"
 )
 @RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @Validated
@@ -32,9 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CustomerController {
 
-//    public CustomerController(ICustomersService iCustomersService) {
-//        this.iCustomersService = iCustomersService;
-//    }
 
     private final ICustomersService iCustomersService;
 
