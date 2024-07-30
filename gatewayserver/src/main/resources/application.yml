@@ -9,7 +9,7 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false  # False, if you want to disable the default routes and to enable only custom routes.
           # To consider the service names in the discovery service to lowercase. By default, this is false.
           lowerCaseServiceId: true
 
