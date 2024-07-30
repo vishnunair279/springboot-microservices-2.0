@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class CardsController {
 
-    private ICardsService iCardsService;
+    private final ICardsService iCardsService;
 
     private static final Logger logger = LoggerFactory.getLogger(CardsController.class);
 
