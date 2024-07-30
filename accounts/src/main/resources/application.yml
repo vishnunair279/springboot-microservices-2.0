@@ -55,3 +55,8 @@ info:
     description: "Bank Accounts Application"
     version: "1.0.0"
 
+logging:
+  level:
+    com:
+      vishnu:
+        accounts: DEBUG
