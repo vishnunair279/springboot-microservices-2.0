@@ -119,7 +119,7 @@
 				<version>3.3.2</version>
 				<configuration>
 					<to>
-						<image>vishnunair13/${project.artifactId}:v3</image>
+						<image>vishnunair13/${project.artifactId}:v4</image>
 					</to>
 				</configuration>
 			</plugin>

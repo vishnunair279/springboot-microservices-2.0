@@ -37,4 +37,4 @@ logging:
   level:
     com:
       vishnu:
-        accounts: DEBUG
+        gatewayserver: DEBUG
