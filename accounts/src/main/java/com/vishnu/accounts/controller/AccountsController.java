@@ -207,6 +207,7 @@ public class AccountsController {
     }
 
     //below method would be executed after the no.of retries are completed and if there's still no response.
+    //To specify an alternative action or return a default value when all retry attempts fail.
     public ResponseEntity<String> getBuildInfoFallback(Throwable throwable) {
         logger.debug("getBuildInfoFallback() method Invoked");
         return ResponseEntity

@@ -87,7 +87,7 @@ resilience4j.retry:
   configs:
     default:
       maxRetryAttempts: 3
-      waitDuration: 500 # Specifies the time(in ms) to wait before triggering the first retry.
+      waitDuration: 300 # Specifies the time(in ms) to wait for each retry .
       enableExponentialBackoff: true
       exponentialBackoffMultiplier: 2
       ignoreExceptions: #Retry mechanism won't be applicable if any of the mentioned exceptions occur and directly fallback method would be executed.
