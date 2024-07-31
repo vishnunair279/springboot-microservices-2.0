@@ -20,6 +20,10 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -68,3 +72,11 @@ logging:
     com:
       vishnu:
         accounts: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10   # Specifies the no.of requests to monitor before taking a decision whether to keep the curcuit open or closed.
+      permittedNumberOfCallsInHalfOpenState: 2  # no .of requests to be sent when the circuit is o=in half open state
+      failureRateThreshold: 50  # If 50%  of the total requests are getting failed, then fall into open state.
+      waitDurationInOpenState: 10000 # wait 10 secs in open status before changing into half open state.
