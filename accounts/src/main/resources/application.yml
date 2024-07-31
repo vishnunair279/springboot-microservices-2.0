@@ -94,3 +94,11 @@ resilience4j.retry:
         - java.lang.NullPointerException
       retryExceptions:  #If retryExceptions are mentioned, then there is no point in mentioning ignoreExecptions.
         - java.util.concurrent.TimeoutException
+
+#Allows only 1 request per 5000ms. The other waiting threads in the queue will get timedout after 1000ms.
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000
+      limitRefreshPeriod: 5000
+      limitForPeriod: 1
