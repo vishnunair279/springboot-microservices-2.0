@@ -13,6 +13,10 @@ spring:
           # To consider the service names in the discovery service to lowercase. By default, this is false.
           lowerCaseServiceId: true
 
+      httpclient: # To configure timeouts for the responses from individual microservices.
+        connect-timeout: 1000
+        response-timeout: 5s
+
 management:
   endpoints:
     web:
