@@ -1,0 +1,22 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: "message"
+  cloud:
+    function:
+      definition: email|sms #This will trigger a pipeline from email function to sms function.
+    stream:
+      bindings:  #Bindings means the network/link between this application and the message broker.
+        emailsms-in-0:  # This is the binding name. "in" represents that it is an input binding.
+          destination: send-communication # name of the queue in the broker(rabbitMQ, Kafka) from which the messages are consumed
+          group: ${spring.application.name}
+        emailsms-out-0: # This is the binding name. "out" represents that it is an output binding. messages are sent through this binding.
+          destination: communication-sent #name of the exchange to which the messages are produced.
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
